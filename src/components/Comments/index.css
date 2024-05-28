@@ -1,0 +1,4 @@
+.insideContainer {
+  display: flex;
+  flex-direction: row;
+}
