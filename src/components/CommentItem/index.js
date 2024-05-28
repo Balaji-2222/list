@@ -1,6 +1,6 @@
 const CommentItem = props => {
-  const {eachItem} = props
-  const {name, comment} = eachItem
+  const {list} = props
+  const {name, comment} = list
   return (
     <li>
       <h1>{name}</h1>
