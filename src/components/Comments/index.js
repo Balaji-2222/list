@@ -1,5 +1,7 @@
 import {Component} from 'react'
 
+import {v4 as uuidv4} from 'uuid'
+
 import './index.css'
 
 import CommentItem from '../CommentItem'
@@ -20,16 +22,42 @@ class Comments extends Component {
   changeBackground = event => {
     event.preventDefault()
 
-    const {name, comment} = this.state
+    const {name, comment, count} = this.state
+
+    const v = Math.floor(Math.random() * 7)
+    const color = initialContainerBackgroundClassNames[v]
     const newList = {
       name,
       comment,
+      color,
+      id: uuidv4(),
+
+      isFavourite: false,
     }
     this.setState(prevState => ({
       list: [...prevState.list, newList],
       name: '',
       comment: '',
+      count: parseInt([prevState.count + 1]),
     }))
+  }
+
+  likeColor = id => {
+    this.setState(prevState => ({
+      list: prevState.list.map(eachItem => {
+        if (id === eachItem.id) {
+          return {...eachItem, isFavourite: !eachItem.isFavourite}
+        }
+        return eachItem
+      }),
+    }))
+  }
+
+  deleteListItem = id => {
+    const {list, count} = this.state
+
+    const newList = list.filter(eachItem => eachItem.id !== id)
+    this.setState({list: newList, count: count - 1})
   }
 
   changeName = event => {
@@ -42,7 +70,7 @@ class Comments extends Component {
 
   render() {
     const {list} = this.state
-
+    const {count, id} = this.state
     return (
       <form className="bgContainer" onSubmit={this.changeBackground}>
         <div className="insideContainer">
@@ -51,7 +79,7 @@ class Comments extends Component {
             <p className="paragraph">Say something about 4.0 technologies</p>
             <input
               type="search"
-              placeholder="Name"
+              placeholder="Your Name"
               onChange={this.changeName}
             />
             <br />
@@ -74,11 +102,18 @@ class Comments extends Component {
         </div>
         <hr className="separator" />
         <div className="container">
-          <p className="para">0</p>
+          <p className="para">{count}</p>
           <p>Comments</p>
         </div>
         <ul>
-          <CommentItem list={list} />
+          {list.map(eachItem => (
+            <CommentItem
+              eachItem={eachItem}
+              likeColor={this.likeColor}
+              deleteListItem={this.deleteListItem}
+              key={id}
+            />
+          ))}
         </ul>
       </form>
     )

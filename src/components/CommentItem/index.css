@@ -1,29 +1,141 @@
 .amber {
   background-color: #f59e0b;
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
 }
 
 .blue {
   background-color: #0b69ff;
+  height: 50px;
+  width: 50px;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
 }
 
 .orange {
   background-color: #f97316;
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
 }
 
 .emerald {
   background-color: #10b981;
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
 }
 
 .teal {
   background-color: #14b8a6;
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
 }
 
 .red {
   background-color: #b91c1c;
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
 }
 
 .light-blue {
   background-color: #0ea5e9;
+  height: 50px;
+  width: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
 }
 
-/* Write your CSS here */
+.blueColor {
+  color: #0b69ff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 13px;
+}
+.whiteColor {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+.besideContainer {
+  display: flex;
+  flex-direction: row;
+}
+.downContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.nameHeading {
+  color: black;
+  font-size: 18px;
+  margin-top: 5px;
+  color: black;
+  font-size: 20px;
+}
+.paraHeading {
+  margin-top: 0px;
+  color: #cbd2d9;
+  font-size: 15px;
+}
+.listItem {
+  list-style-type: none;
+  height: 230px;
+  width: 70%;
+  border-right: 0px;
+  border-left: 0px;
+  border-top: 0px;
+  border-bottom: 3px solid #cbd2d9;
+  box-shadow: shadow;
+}
+.side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.sideButton {
+  display: flex;
+  flex-direction: row;
+  margin-right: 0px;
+}
+
+.button1 {
+  background-color: transparent;
+  border-width: 0px;
+  height: 20px;
+  width: 20px;
+}
+.button2 {
+  background-color: transparent;
+  border-width: 0px;
+  font-size: 20px;
+}
